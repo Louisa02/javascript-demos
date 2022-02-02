@@ -6,7 +6,7 @@ export function Run(){
 		e.preventDefault();    
 		let text = getUserValues(e);
 		//TODO: Add code here to trim the entered text.
-
+        text = text.trim();
 		let {message, isNotValid} = validateUserValues(text);
 		if(isNotValid){
 			showAlert(message, 'error');
@@ -27,7 +27,10 @@ export function Run(){
 		let isNotValid = true;
 		//TODO: Add code here to validate the entered text
 		//as per the specs request.
-		
+		if(text === '')
+            message += `| Text Empty |`;
+		if(text.length > 10)
+		    message += `| Text > 10 |`;
 		if(message != '')
 			message = `Invalid Data: ` + message;
 		else isNotValid = false;
