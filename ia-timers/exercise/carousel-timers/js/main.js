@@ -2,6 +2,7 @@
 let images = ['mountain1.jpg', 'mountain2.jpg', 'mountain3.jpg'];
 let currentImage = 0;
 //Add the global variable here.
+let slideShow;
 
 document.querySelector('.carousel>img').src = 'images/' + images[0]; 
 
@@ -24,3 +25,6 @@ function moveSlide(dir) {
 }
 
 //Add your code here to start the timer.
+slideShow = setInterval (function () {
+    moveSlide(+1)
+}, 3000);

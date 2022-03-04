@@ -13,7 +13,7 @@ document.querySelector('.controls').addEventListener('click', function (evt) {
 		//https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval
 		slideshowInterval = setInterval(function () {
 			moveSlide(+1);
-		}, 3000);
+		}, 1500);
 		playButton = evt.target;
 		playButton.setAttribute('disabled', 'disabled');
 	} else if (evt.target.className == 'btn-pause') {
